@@ -1,28 +1,25 @@
 pipeline {
-	agent	{
-		label 'ISTHARA-AGENT'
-	}
-	stages{
-		stage('git clone'){
+	agent any
+	stages {
+		stage('GIT CLONE') {
 			steps{
-				echo 'Git Repo cloned'
+				echo 'cloning the repo from scm'
 			}
 		}
-		stage('build'){
+		stage('NPM BUILD') {
 			steps{
-				echo 'this is a Build stage'
+				echo 'building the npm package'
 			}
 		}
-		stage('Test'){
-			steps{
-				echo 'this is Test stage'
+		stage('TEST'){
+			steps {
+				echo 'TEST BUILD'
 			}
 		}
-		stage('Deploy'){
+		stage('Deploy') {
 			steps{
-				echo 'this is Deploy stage'
+				echo 'deploy application on lower environment'
 			}
-		
 		}
 	}
 }
