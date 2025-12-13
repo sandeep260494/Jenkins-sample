@@ -40,7 +40,7 @@ pipeline {
 	post {
 		always {
 			echo 'Build Runned'
-			deleteDIR()
+			deleteDir()
 		}
 		failure {
 			echo 'Build failed'
