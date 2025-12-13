@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'ISTHARA-AGENT'
+		label 'ISTHARA-AGENT1'
 	}
 	stages {
 		stage('GIT CLONE') {
