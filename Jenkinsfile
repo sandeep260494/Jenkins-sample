@@ -6,12 +6,12 @@ pipeline {
 				echo 'cloning the repo from scm'
 			}
 		}
-		stage(NPM BUILD) {
+		stage('NPM BUILD') {
 			steps{
 				echo 'building the npm package'
 			}
 		}
-		stage(TEST){
+		stage('TEST'){
 			steps {
 				echo 'TEST BUILD'
 			}
