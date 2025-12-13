@@ -1,7 +1,5 @@
 pipeline {
-	agent	{
-		label 'ISTHARA-AGENT'
-	}
+	agent any
 	stages{
 		stage('git clone'){
 			steps{
