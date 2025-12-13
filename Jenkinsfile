@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'ISTHARA-AGENT1'
+		label 'ISTHARA-AGENT'
 	}
 	stages {
 		stage('GIT CLONE') {
@@ -22,6 +22,17 @@ pipeline {
 			steps{
 				echo 'deploy application on lower environment'
 			}
+		}
+	}
+	post {
+		always {
+			echo 'Build Runned'
+		}
+		failure {
+			echo 'Build failed'
+		}
+		success {
+			echo 'Build Success'
 		}
 	}
 }
