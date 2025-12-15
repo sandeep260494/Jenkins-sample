@@ -3,12 +3,12 @@ pipeline {
 	stages {
 		stage('git clone'){
 			steps{
-				echo "this is a git clone stage"
+				sh date
 			}
 		}
 		stage('build') {
 			steps{
-				echo 'This is a Build Stage'
+				sh uptime
 			}
 		}
 		stage('Test') {
