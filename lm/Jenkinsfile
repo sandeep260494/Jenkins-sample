@@ -2,6 +2,9 @@ pipeline {
 	agent {
 		label 'LM-AGENT'
 	}
+	options {
+		timeout(time: 30, unit: 'Minutes')
+	}
 	stages {
 		stage('git clone'){
 			steps{
@@ -33,6 +36,7 @@ pipeline {
 		}
 		failure {
 			echo 'job failed'
+			deleteDir()
 		}
 	}
 }
