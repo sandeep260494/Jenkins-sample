@@ -1,5 +1,7 @@
 pipeline {
-	agent any
+	agent {
+		label 'LM-AGENT'
+	}
 	stages {
 		stage('git clone'){
 			steps{
