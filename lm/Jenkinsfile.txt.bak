@@ -20,15 +20,4 @@ pipeline {
 			echo 'this is a deploy stage'
 		}
 	}
-	post {
-		always {
-			echo 'job build'
-		}
-		success {
-			echo 'job Success'
-		}
-		failure {
-			echo 'job failed'
-		}
-	}
 }
