@@ -3,7 +3,8 @@ pipeline {
 		label 'LM-AGENT'
 	}
 	options {
-		timeout(time: 30, unit: 'Minutes')
+		timeout(time: 30, unit: 'MINUTES')
+		disableConcurrentBuilds()
 	}
 	stages {
 		stage('git clone'){
