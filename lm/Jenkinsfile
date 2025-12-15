@@ -6,7 +6,19 @@ pipeline {
 		timeout(time: 30, unit: 'MINUTES')
 		disableConcurrentBuilds()
 	}
+	environment {
+		appVersion = ''
+		ACC_ID = '291293118913'
+		PROJECT = "ISTHARA"
+		COMPONENT = 'catalogue'
+	}
 	stages {
+		stage(env) {
+			steps {
+				sh 'env'
+
+			}
+		}
 		stage('git clone'){
 			steps{
 				sh 'date'
