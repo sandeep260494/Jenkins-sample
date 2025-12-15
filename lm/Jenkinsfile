@@ -29,6 +29,7 @@ pipeline {
 		}
 		failure {
 			echo 'job failed'
+			deleteDir()
 		}
 	}
 }
