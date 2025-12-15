@@ -15,7 +15,10 @@ pipeline {
 	stages {
 		stage(env) {
 			steps {
-				echo "appVersion is ${appVersion}"
+				sh """
+				echo 'appVersion is ${appVersion}'
+				echo 'ACC_ID is ${ACC_ID}'
+				"""
 
 			}
 		}
