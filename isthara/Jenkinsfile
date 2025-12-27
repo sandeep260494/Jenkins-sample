@@ -10,7 +10,7 @@ pipeline {
         component = 'dev'   
         }
     options{
-        timeout(time:1 units:30)
+        timeout(time: '30', units: 'MINUTES')
     }
 	stages{
 		stage('TEST'){
