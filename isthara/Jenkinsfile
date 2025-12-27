@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-        label 'pixxort'
+        label 'pxt'
     }
 	stages{
 		stage('TEST'){
