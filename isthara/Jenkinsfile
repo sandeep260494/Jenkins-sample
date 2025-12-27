@@ -1,5 +1,7 @@
 pipeline {
-	agent any
+	agent {
+        label='pixxor'
+    }
 	stages{
 		stage('TEST'){
 			steps{
