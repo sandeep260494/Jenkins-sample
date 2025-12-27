@@ -1,7 +1,14 @@
 pipeline {
 	agent {
         label 'pxt'
+        disableConcurrentBuilds()
     }
+    environment {
+        appVesion = '1.0.0'
+        region = 'u-east-1'
+        project_id = 'isth' 
+        component = 'dev'   
+        }
 	stages{
 		stage('TEST'){
 			steps{
@@ -13,8 +20,25 @@ pipeline {
 				echo 'THIS is a GIT clone'
 			}
 		}
+        stage('LINUX MULTI COMMANDS') {
+            script {
+                steps {
+                    sh '''
+                        uname -a
+                        ls -l
+                    '''    
+                }
+            }
+        }
+        stage('env'){
+            script{
+                steps{
+                    echo '$env'
+                }
+            }
+        }
 	}
-    
+
 
 }
 
