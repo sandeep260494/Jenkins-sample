@@ -1,0 +1,16 @@
+pipeline {
+	agent any
+	stages{
+		stage('TEST'){
+			steps{
+				echo "This is a Jenkins Test Stage"
+			}
+		}
+		stage('GIT CLONE') {
+			steps{
+				echo 'THIS is a GIT clone'
+			}
+		}
+	}
+
+}
