@@ -9,6 +9,9 @@ pipeline {
         project_id = 'isth' 
         component = 'dev'   
         }
+    options{
+        timeout(time:1 units:30)
+    }
 	stages{
 		stage('TEST'){
 			steps{
@@ -38,7 +41,17 @@ pipeline {
             }
         }
 	}
+    post {
+        always {
+            echo "Build executed Successfully"
+        }
+        failure {
+            echo "Build Failed"
+        }
+        success {
+            echo "Build Success"
+        }
+    }
 
 
 }
-
